@@ -24,39 +24,37 @@ const ContactMe = () => {
   const exit = direction === "up" ? "exitDown" : "exitUp";
 
   return (
-    <motion.div
+    <StyledContainer
       variants={pageAnimation}
       initial={initial}
       animate="show"
       exit={exit}
     >
-      <StyledContainer>
-        <StyledTitle>Contact me</StyledTitle>
-        <MessageBox />
-        <StyledOr>
-          <div></div>
-          <h2>or</h2>
-          <div></div>
-        </StyledOr>
-        <StyledSocial>
-          <Social
-            name="linkedin"
-            image={LinkedInImage}
-            to="https://www.linkedin.com/in/tuan-thanh-tan-aa980419a/"
-          />
-          <Social
-            name="gmail"
-            image={GmailImage}
-            to="mailto:tuanthanh2067@gmail.com"
-          />
-          <Social
-            name="github"
-            image={GithubImage}
-            to="https://github.com/tuanthanh2067"
-          />
-        </StyledSocial>
-      </StyledContainer>
-    </motion.div>
+      <StyledTitle>Contact me</StyledTitle>
+      <MessageBox />
+      <StyledOr>
+        <div></div>
+        <h2>or</h2>
+        <div></div>
+      </StyledOr>
+      <StyledSocial>
+        <Social
+          name="linkedin"
+          image={LinkedInImage}
+          to="https://www.linkedin.com/in/tuan-thanh-tan-aa980419a/"
+        />
+        <Social
+          name="gmail"
+          image={GmailImage}
+          to="mailto:tuanthanh2067@gmail.com"
+        />
+        <Social
+          name="github"
+          image={GithubImage}
+          to="https://github.com/tuanthanh2067"
+        />
+      </StyledSocial>
+    </StyledContainer>
   );
 };
 

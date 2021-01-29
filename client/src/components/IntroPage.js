@@ -61,12 +61,19 @@ const StyledName = styled(motion.h1)`
   div:hover {
     color: white;
   }
+
+  @media (max-width: 450px) {
+    font-size: 1.45em;
+  }
 `;
 
 const StyledIntro = styled(motion.h1)`
   font-size: 1.25em;
   overflow: hidden;
   color: white;
+  @media (max-width: 450px) {
+    font-size: 1.005em;
+  }
 `;
 
 export default IntroPage;

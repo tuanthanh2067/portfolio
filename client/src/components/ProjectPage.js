@@ -22,7 +22,7 @@ const ProjectPage = () => {
   const exit = direction === "up" ? "exitDown" : "exitUp";
 
   return (
-    <motion.div
+    <StyledProjects
       variants={pageAnimation}
       initial={initial}
       animate="show"
@@ -49,9 +49,13 @@ const ProjectPage = () => {
           <button>More++</button>
         </StyledMore>
       </StyledGrid>
-    </motion.div>
+    </StyledProjects>
   );
 };
+
+const StyledProjects = styled(motion.div)`
+  height: 100%;
+`;
 
 const StyledTitle = styled(motion.h1)`
   color: white;
@@ -60,15 +64,32 @@ const StyledTitle = styled(motion.h1)`
 `;
 
 const StyledGrid = styled(motion.div)`
+  height: 80%;
   width: 50%;
   margin: 2.5em auto;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+
+  @media (max-width: 1475px) {
+    width: 60%;
+  }
+
+  @media (max-width: 1145px) {
+    width: 80%;
+  }
+
+  @media (max-width: 875px) {
+    width: 90%;
+  }
+
+  @media (max-width: 750px) {
+    width: 96%;
+  }
 `;
 
 const StyledMore = styled(motion.div)`
-  width: 325px;
+  width: 45%;
   height: 250px;
   display: flex;
   justify-content: center;
@@ -81,6 +102,10 @@ const StyledMore = styled(motion.div)`
     font-size: 2em;
     cursor: pointer;
     outline: none;
+  }
+
+  @media (max-width: 600px) {
+    height: 220px;
   }
 `;
 

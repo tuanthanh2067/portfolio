@@ -74,6 +74,15 @@ const StyledPageSelector = styled.div`
   top: 50%;
   right: 1%;
   transform: translateY(-50%);
+  @media (max-width: 875px) {
+    top: 95%;
+    right: 50%;
+    transform: translateY(0%);
+    transform: translateX(50%);
+    width: 100px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 const StyledSvg = styled.svg`

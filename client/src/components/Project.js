@@ -23,16 +23,20 @@ const Project = ({ title, image, url }) => {
 };
 
 const StyledWindow = styled.div`
-  width: 325px;
+  width: 45%;
   height: 250px;
   background: white;
   display: flex;
   flex-direction: column;
-  margin-bottom: 4em;
+  margin: 2.5em 0em;
   border-radius: 12px;
   overflow: hidden;
   background: black;
   cursor: pointer;
+
+  @media (max-width: 600px) {
+    height: 220px;
+  }
 `;
 
 const StyledHeader = styled.div`
@@ -57,6 +61,10 @@ const CloseButton = styled.div`
   height: 12px;
   border-radius: 50%;
   background: #e84545;
+  @media (max-width: 450px) {
+    width: 9px;
+    height: 9px;
+  }
 `;
 
 const RestoreButton = styled.div`
@@ -64,6 +72,10 @@ const RestoreButton = styled.div`
   height: 12px;
   border-radius: 50%;
   background: #e8a645;
+  @media (max-width: 450px) {
+    width: 9px;
+    height: 9px;
+  }
 `;
 
 const MinimizeButton = styled.div`
@@ -71,11 +83,18 @@ const MinimizeButton = styled.div`
   height: 12px;
   border-radius: 50%;
   background: #2dba3b;
+  @media (max-width: 450px) {
+    width: 9px;
+    height: 9px;
+  }
 `;
 
 const StyledTitle = styled.div`
   font-weight: 500;
   font-size: 0.8em;
+  @media (max-width: 450px) {
+    font-size: 0.7em;
+  }
 `;
 
 const StyledBody = styled.div`
@@ -87,6 +106,7 @@ const StyledBody = styled.div`
     width: 100%;
     height: 100%;
     transition: all 0.5s ease;
+    object-fit: cover;
     &:hover {
       transform: scale(1.125);
     }
