@@ -11,11 +11,41 @@ import { PageContext } from "../context/PageContext";
 // shuttle
 import Shuttle from "./Shuttle";
 
+import WebDevSkill from "./WebDevSkill";
+
 const SkillPage = () => {
-  const { direction } = useContext(PageContext);
+  const { direction, clickedSkill, setClickedSkill } = useContext(PageContext);
 
   const initial = direction === "up" ? "hiddenUp" : "hiddenDown";
   const exit = direction === "up" ? "exitDown" : "exitUp";
+
+  let title = (
+    <>
+      <Shuttle />= 3 months
+    </>
+  );
+
+  let content = (
+    <>
+      <WebDevSkill title="C/C++" amount={6} />
+      <WebDevSkill title="Java" amount={2} />
+      <WebDevSkill title="Javascript" amount={5} />
+      <WebDevSkill title="HTML, CSS" amount={5} />
+      <WebDevSkill title="ReactJs" amount={3} />
+      <WebDevSkill title="AngularJs" amount={1} />
+      <WebDevSkill title="Figma" amount={1} />
+    </>
+  );
+  const doneHandler = () => {
+    setClickedSkill("");
+  };
+
+  let skilledTitle = <>{clickedSkill}</>;
+  let skilledContent = (
+    <StyledContent>Hello my name is {clickedSkill}</StyledContent>
+  );
+  let footer = <StyledDoneButton onClick={doneHandler}>Done</StyledDoneButton>;
+
   return (
     <StyledSkills
       variants={pageAnimation}
@@ -25,68 +55,9 @@ const SkillPage = () => {
     >
       <StyledTitle>My skills</StyledTitle>
       <StyledTable>
-        <StyledHeader>
-          <Shuttle />= 3 months
-        </StyledHeader>
-        <StyledBody>
-          <StyledSkill>
-            <h2>C/C++</h2>
-            <StyledShuttles>
-              <Shuttle />
-              <Shuttle />
-              <Shuttle />
-              <Shuttle />
-              <Shuttle />
-              <Shuttle />
-            </StyledShuttles>
-          </StyledSkill>
-          <StyledSkill>
-            <h2>Java</h2>
-            <div>
-              <Shuttle />
-              <Shuttle />
-            </div>
-          </StyledSkill>
-          <StyledSkill>
-            <h2>Javascript</h2>
-            <div>
-              <Shuttle />
-              <Shuttle />
-              <Shuttle />
-              <Shuttle />
-              <Shuttle />
-            </div>
-          </StyledSkill>
-          <StyledSkill>
-            <h2>HTML, CSS</h2>
-            <div>
-              <Shuttle />
-              <Shuttle />
-              <Shuttle />
-              <Shuttle />
-              <Shuttle />
-            </div>
-          </StyledSkill>
-          <StyledSkill>
-            <h2>ReactJs</h2>
-            <div>
-              <Shuttle />
-              <Shuttle />
-            </div>
-          </StyledSkill>
-          <StyledSkill>
-            <h2>AngularJs</h2>
-            <div>
-              <Shuttle />
-            </div>
-          </StyledSkill>
-          <StyledSkill>
-            <h2>Figma</h2>
-            <div>
-              <Shuttle />
-            </div>
-          </StyledSkill>
-        </StyledBody>
+        <StyledHeader>{clickedSkill ? skilledTitle : title}</StyledHeader>
+        <StyledBody>{clickedSkill ? skilledContent : content}</StyledBody>
+        {clickedSkill && footer}
       </StyledTable>
     </StyledSkills>
   );
@@ -112,6 +83,7 @@ const StyledTable = styled.div`
   padding: 1.5em;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   @media (max-width: 1400px) {
     width: 40%;
@@ -138,26 +110,25 @@ const StyledHeader = styled.div`
   align-items: center;
   color: white;
   font-size: 1.25em;
+  font-weight: bold;
 `;
 
-const StyledBody = styled(motion.div)`
+const StyledBody = styled.div`
   width: 100%;
   height: 90%;
   margin: 0.5em 0em;
 `;
 
-const StyledSkill = styled.div`
-  height: 13%;
+const StyledContent = styled.p`
   color: white;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  h2 {
-    font-size: 1.125em;
-  }
 `;
 
-const StyledShuttles = styled.div``;
+const StyledDoneButton = styled.div`
+  background: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+`;
 
 export default SkillPage;
