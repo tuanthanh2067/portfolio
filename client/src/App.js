@@ -5,8 +5,9 @@ import GlobalStyle from "./components/GlobalStyle";
 
 // pages
 import IntroPage from "./components/IntroPage";
+import SkillPage from "./components/SkillPage";
 import ProjectPage from "./components/ProjectPage";
-import ContactMe from "./components/ContactMe";
+import ContactMePage from "./components/ContactMePage";
 
 // page selector
 import PageSelector from "./components/PageSelector";
@@ -26,8 +27,9 @@ function App() {
         <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
             <Route path="/" exact render={() => <IntroPage />} />
+            <Route path="/skills" render={() => <SkillPage />} />
             <Route path="/projects" render={() => <ProjectPage />} />
-            <Route path="/contact" render={() => <ContactMe />} />
+            <Route path="/contact" render={() => <ContactMePage />} />
           </Switch>
         </AnimatePresence>
       </div>

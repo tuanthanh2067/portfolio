@@ -1,13 +1,13 @@
 export const pageAnimation = {
   hiddenUp: {
-    opacity: 0.15,
+    opacity: 0.05,
     y: -550,
     transition: {
       duration: 0.45,
     },
   },
   hiddenDown: {
-    opacity: 0.15,
+    opacity: 0.05,
     y: 550,
     transition: {
       duration: 0.45,
@@ -22,14 +22,14 @@ export const pageAnimation = {
     },
   },
   exitUp: {
-    opacity: 0.15,
+    opacity: 0.05,
     y: -550,
     transition: {
       duration: 0.45,
     },
   },
   exitDown: {
-    opacity: 0.15,
+    opacity: 0.05,
     y: 550,
     transition: {
       duration: 0.45,

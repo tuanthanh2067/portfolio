@@ -27,8 +27,10 @@ const PageSelector = () => {
     if (currentPage === 1) {
       history.push("/");
     } else if (currentPage === 2) {
-      history.push("/projects");
+      history.push("/skills");
     } else if (currentPage === 3) {
+      history.push("/projects");
+    } else if (currentPage === 4) {
       history.push("/contact");
     }
   }, [history, currentPage]);
