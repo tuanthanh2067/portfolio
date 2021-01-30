@@ -5,10 +5,10 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 // context
-import { PageContext } from "../context/PageContext";
+import { PageContext } from "../../context/PageContext";
 
 // shuttle
-import Shuttle from "./Shuttle";
+import Shuttle from "../Shuttle";
 
 const WebDevSkill = ({ title, amount }) => {
   const { setClickedSkill } = useContext(PageContext);

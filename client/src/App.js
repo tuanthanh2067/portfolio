@@ -4,10 +4,10 @@ import { Route, Switch, useLocation } from "react-router-dom";
 import GlobalStyle from "./components/GlobalStyle";
 
 // pages
-import IntroPage from "./components/IntroPage";
-import SkillPage from "./components/SkillPage";
-import ProjectPage from "./components/ProjectPage";
-import ContactMePage from "./components/ContactMePage";
+import IntroPage from "./components/Intro/IntroPage";
+import SkillPage from "./components/Skills/SkillPage";
+import ProjectPage from "./components/Projects/ProjectPage";
+import ContactMePage from "./components/Contact/ContactMePage";
 
 // page selector
 import PageSelector from "./components/PageSelector";

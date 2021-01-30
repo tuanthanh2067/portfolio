@@ -4,16 +4,16 @@ import styled from "styled-components";
 import Project from "./Project";
 
 // images
-import imageLibrary from "../assets/images/image-library.jpg";
-import gameLibrary from "../assets/images/game-library.jpg";
-import vacation from "../assets/images/airbnb-clone.jpg";
+import imageLibrary from "../../assets/images/image-library.jpg";
+import gameLibrary from "../../assets/images/game-library.jpg";
+import vacation from "../../assets/images/airbnb-clone.jpg";
 
 // animation stuff
 import { motion } from "framer-motion";
-import { pageAnimation } from "../animation";
+import { pageAnimation } from "../../animation";
 
 // context
-import { PageContext } from "../context/PageContext";
+import { PageContext } from "../../context/PageContext";
 
 const ProjectPage = () => {
   const { direction } = useContext(PageContext);

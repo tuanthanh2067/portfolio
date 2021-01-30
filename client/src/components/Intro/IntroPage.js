@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 // animation stuff
 import { motion } from "framer-motion";
-import SplitText from "./SplitText";
-import { pageAnimation } from "../animation";
+import SplitText from "../SplitText";
+import { pageAnimation } from "../../animation";
 
 // context
-import { PageContext } from "../context/PageContext";
+import { PageContext } from "../../context/PageContext";
 
 const IntroPage = () => {
   const { direction } = useContext(PageContext);

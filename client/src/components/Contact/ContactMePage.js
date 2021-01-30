@@ -6,16 +6,16 @@ import MessageBox from "./MessageBox";
 
 // social stuff
 import Social from "./Social";
-import GmailImage from "../assets/icons/gmail.png";
-import LinkedInImage from "../assets/icons/linkedin.png";
-import GithubImage from "../assets/icons/github (2).png";
+import GmailImage from "../../assets/icons/gmail.png";
+import LinkedInImage from "../../assets/icons/linkedin.png";
+import GithubImage from "../../assets/icons/github (2).png";
 
 // animation stuff
 import { motion } from "framer-motion";
-import { pageAnimation } from "../animation";
+import { pageAnimation } from "../../animation";
 
 // context
-import { PageContext } from "../context/PageContext";
+import { PageContext } from "../../context/PageContext";
 
 const ContactMe = () => {
   const { direction } = useContext(PageContext);
