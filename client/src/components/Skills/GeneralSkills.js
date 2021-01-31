@@ -9,6 +9,9 @@ import { motion } from "framer-motion";
 // shuttle
 import Shuttle from "../Shuttle";
 
+// data
+import skills from "./data";
+
 const GeneralSkills = () => {
   return (
     <StyledContainer
@@ -20,13 +23,9 @@ const GeneralSkills = () => {
         <Shuttle />= 3 months
       </StyledHeader>
       <StyledBody>
-        <WebDevSkill title="C/C++" amount={6} />
-        <WebDevSkill title="Java" amount={2} />
-        <WebDevSkill title="Javascript" amount={5} />
-        <WebDevSkill title="HTML, CSS" amount={5} />
-        <WebDevSkill title="ReactJs" amount={3} />
-        <WebDevSkill title="AngularJs" amount={1} />
-        <WebDevSkill title="Figma" amount={1} />
+        {skills.map((skill) => {
+          return <WebDevSkill skill={skill} key={skill.title} />;
+        })}
       </StyledBody>
     </StyledContainer>
   );

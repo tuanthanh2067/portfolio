@@ -9,21 +9,21 @@ import { PageContext } from "../../context/PageContext";
 const DetailedSkills = () => {
   const { clickedSkill, setClickedSkill } = useContext(PageContext);
 
-  const doneHandler = () => {
-    setClickedSkill("");
-  };
-
   return (
     <StyledContainer
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <StyledHeader>{clickedSkill}</StyledHeader>
+      <StyledHeader>{clickedSkill.title}</StyledHeader>
       <StyledBody>
-        <StyledContent>Hello {clickedSkill}</StyledContent>
+        <StyledContent>
+          Hello {clickedSkill.title} and {clickedSkill.description}
+        </StyledContent>
       </StyledBody>
-      <StyledDoneButton onClick={doneHandler}>Done</StyledDoneButton>
+      <StyledDoneButton onClick={() => setClickedSkill(null)}>
+        Done
+      </StyledDoneButton>
     </StyledContainer>
   );
 };
