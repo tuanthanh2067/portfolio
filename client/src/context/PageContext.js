@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 export const PageContext = createContext();
 
 const PageContextProvider = (props) => {
-  const [totalPage] = useState(4);
+  const [totalPage] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
   const [direction, setDirection] = useState("down");
   const [clickedSkill, setClickedSkill] = useState(null);

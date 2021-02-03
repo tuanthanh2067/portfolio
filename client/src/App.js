@@ -8,6 +8,7 @@ import IntroPage from "./components/Intro/IntroPage";
 import SkillPage from "./components/Skills/SkillPage";
 import ProjectPage from "./components/Projects/ProjectPage";
 import ContactMePage from "./components/Contact/ContactMePage";
+import TimelinePage from "./components/Timeline/TimelinePage";
 
 // page selector
 import PageSelector from "./components/PageSelector";
@@ -29,6 +30,7 @@ function App() {
             <Route path="/" exact render={() => <IntroPage />} />
             <Route path="/skills" render={() => <SkillPage />} />
             <Route path="/projects" render={() => <ProjectPage />} />
+            <Route path="/timeline" render={() => <TimelinePage />} />
             <Route path="/contact" render={() => <ContactMePage />} />
           </Switch>
         </AnimatePresence>

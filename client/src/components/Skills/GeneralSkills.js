@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
 import WebDevSkill from "./WebDevSkill";
@@ -12,7 +12,12 @@ import Shuttle from "../Shuttle";
 // data
 import skills from "./data";
 
+// context
+import { PageContext } from "../../context/PageContext";
+
 const GeneralSkills = () => {
+  const { setClickedSkill } = useContext(PageContext);
+
   return (
     <StyledContainer
       initial={{ opacity: 0 }}
@@ -24,7 +29,13 @@ const GeneralSkills = () => {
       </StyledHeader>
       <StyledBody>
         {skills.map((skill) => {
-          return <WebDevSkill skill={skill} key={skill.title} />;
+          return (
+            <WebDevSkill
+              skill={skill}
+              key={skill.title}
+              onSelected={setClickedSkill}
+            />
+          );
         })}
       </StyledBody>
     </StyledContainer>

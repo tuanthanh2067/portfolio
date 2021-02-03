@@ -31,6 +31,8 @@ const PageSelector = () => {
     } else if (currentPage === 3) {
       history.push("/projects");
     } else if (currentPage === 4) {
+      history.push("/timeline");
+    } else if (currentPage === 5) {
       history.push("/contact");
     }
   }, [history, currentPage]);

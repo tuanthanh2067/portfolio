@@ -1,25 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
-
-// animation stuff
-import { motion } from "framer-motion";
 
 // shuttle
 import Shuttle from "../Shuttle";
 
-// context
-import { PageContext } from "../../context/PageContext";
-
 const WebDevSkill = ({ skill, onSelected }) => {
-  const { setClickedSkill } = useContext(PageContext);
-
   let shuttles = [];
   for (let i = 1; i <= skill.amount; i++) {
     shuttles.push(<Shuttle key={i} />);
   }
 
   return (
-    <StyledSkill onClick={() => setClickedSkill(skill)}>
+    <StyledSkill onClick={() => onSelected(skill)}>
       <h2>{skill.title}</h2>
       <div>{shuttles}</div>
     </StyledSkill>
@@ -28,7 +20,7 @@ const WebDevSkill = ({ skill, onSelected }) => {
 
 export default WebDevSkill;
 
-const StyledSkill = styled(motion.div)`
+const StyledSkill = styled.div`
   height: 8%;
   color: white;
   font-weight: bold;
