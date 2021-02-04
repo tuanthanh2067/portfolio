@@ -14,11 +14,14 @@ import Dot from "./Dot";
 import Table from "./Table";
 import Line from "./Line";
 
+// modal
+import Modal from "../Modal/Modal";
+
 // data
 import { data } from "./data";
 
 const Timeline = () => {
-  const { direction } = useContext(PageContext);
+  const { direction, setModalInfo } = useContext(PageContext);
 
   const initial = direction === "up" ? "hiddenUp" : "hiddenDown";
   const exit = direction === "up" ? "exitDown" : "exitUp";
@@ -28,17 +31,13 @@ const Timeline = () => {
   let dots = [];
 
   for (let i = 0; i < data.length; i++) {
-    if (data[i].pos === "left") {
+    if (i % 2 === 1) {
       leftTable.push(
-        <Tag key={data[i].id} top={data[i].top}>
-          {data[i].date}
-        </Tag>
+        <Tag key={data[i].id} data={data[i]} onSelected={setModalInfo} />
       );
-    } else if (data[i].pos === "right") {
+    } else {
       rightTable.push(
-        <Tag key={data[i].id} top={data[i].top}>
-          {data[i].date}
-        </Tag>
+        <Tag key={data[i].id} data={data[i]} onSelected={setModalInfo} />
       );
     }
     dots.push(<Dot key={data[i].id} top={data[i].top}></Dot>);
@@ -57,6 +56,8 @@ const Timeline = () => {
         <Line>{dots}</Line>
         <Table position="right">{rightTable}</Table>
       </StyledMain>
+
+      <Modal />
     </StyledTimeline>
   );
 };

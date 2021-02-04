@@ -7,6 +7,7 @@ const PageContextProvider = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [direction, setDirection] = useState("down");
   const [clickedSkill, setClickedSkill] = useState(null);
+  const [modalInfo, setModalInfo] = useState(null);
 
   return (
     <PageContext.Provider
@@ -18,6 +19,8 @@ const PageContextProvider = (props) => {
         setDirection,
         clickedSkill,
         setClickedSkill,
+        modalInfo,
+        setModalInfo,
       }}
     >
       {props.children}

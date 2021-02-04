@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-const Tag = ({ top, children }) => {
-  return <StyledTag style={{ top: top }}>{children}</StyledTag>;
+const Tag = ({ data, onSelected }) => {
+  return (
+    <StyledTag style={{ top: data.top }} onClick={() => onSelected(data)}>
+      {data.date}
+    </StyledTag>
+  );
 };
 
 export default Tag;
