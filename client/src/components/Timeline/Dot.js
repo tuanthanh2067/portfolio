@@ -16,4 +16,8 @@ const StyledDot = styled.div`
   left: 50%;
   transform: translate(-50%, 100%);
   cursor: pointer;
+  transition: all 0.25s ease;
+  &:hover {
+    background: #d4d4d4;
+  }
 `;

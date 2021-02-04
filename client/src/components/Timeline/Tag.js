@@ -9,10 +9,10 @@ export default Tag;
 
 const StyledTag = styled.div`
   position: absolute;
-  min-width: 150px;
+  min-width: 140px;
   height: 30px;
   display: flex;
-  font-size: 0.95em;
+  font-size: 0.75em;
   justify-content: center;
   align-items: center;
   padding: 0.5em;
@@ -20,6 +20,7 @@ const StyledTag = styled.div`
   font-weight: bold;
   transition: all 0.5s ease;
   cursor: pointer;
+  border-radius: 12px;
   &:hover {
     background: #d4d4d4;
   }

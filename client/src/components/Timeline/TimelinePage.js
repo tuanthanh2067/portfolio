@@ -11,6 +11,8 @@ import { PageContext } from "../../context/PageContext";
 // components
 import Tag from "./Tag";
 import Dot from "./Dot";
+import Table from "./Table";
+import Line from "./Line";
 
 // data
 import { data } from "./data";
@@ -27,11 +29,19 @@ const Timeline = () => {
 
   for (let i = 0; i < data.length; i++) {
     if (data[i].pos === "left") {
-      leftTable.push(<Tag top={data[i].top}>{data[i].date}</Tag>);
+      leftTable.push(
+        <Tag key={data[i].id} top={data[i].top}>
+          {data[i].date}
+        </Tag>
+      );
     } else if (data[i].pos === "right") {
-      rightTable.push(<Tag top={data[i].top}>{data[i].date}</Tag>);
+      rightTable.push(
+        <Tag key={data[i].id} top={data[i].top}>
+          {data[i].date}
+        </Tag>
+      );
     }
-    dots.push(<Dot top={data[i].top}></Dot>);
+    dots.push(<Dot key={data[i].id} top={data[i].top}></Dot>);
   }
 
   return (
@@ -43,9 +53,9 @@ const Timeline = () => {
     >
       <StyledTitle>Timeline</StyledTitle>
       <StyledMain>
-        <StyledLeftTable>{leftTable}</StyledLeftTable>
-        <StyledLine>{dots}</StyledLine>
-        <StyledRightTable>{rightTable}</StyledRightTable>
+        <Table position="left">{leftTable}</Table>
+        <Line>{dots}</Line>
+        <Table position="right">{rightTable}</Table>
       </StyledMain>
     </StyledTimeline>
   );
@@ -68,31 +78,6 @@ const StyledMain = styled.div`
   height: 100%;
   display: flex;
   justify-content: space-between;
-`;
-
-const StyledLine = styled.div`
-  width: 5px;
-  height: 80%;
-  background: white;
-  border-radius: 24px;
-  position: relative;
-  margin: 0em 1.5em;
-`;
-
-const StyledLeftTable = styled.div`
-  width: 50%;
-  height: 80%;
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-`;
-
-const StyledRightTable = styled.div`
-  width: 50%;
-  height: 80%;
-  display: flex;
-  justify-content: flex-start;
-  position: relative;
 `;
 
 export default Timeline;
