@@ -28,4 +28,8 @@ const StyledTag = styled.div`
   &:hover {
     background: #d4d4d4;
   }
+  @media (max-width: 450px) {
+    min-width: 120px;
+    font-size: 0.65em;
+  }
 `;

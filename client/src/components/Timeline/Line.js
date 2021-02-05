@@ -14,4 +14,7 @@ const StyledLine = styled.div`
   border-radius: 24px;
   position: relative;
   margin: 0em 1.5em;
+  @media (max-width: 350px) {
+    margin: 0em 0.75em;
+  }
 `;

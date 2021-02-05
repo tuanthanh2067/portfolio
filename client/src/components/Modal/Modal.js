@@ -19,9 +19,10 @@ const Modal = () => {
   const modal = modalInfo && (
     <motion.div
       key="modal"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      variants={modalAnimation}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
     >
       <Overlay onSelected={closeHandler} />
       <StyledModal>
@@ -59,6 +60,9 @@ const StyledModal = styled.div`
   min-height: 100px;
   padding: 0.75em;
   z-index: 15;
+  @media (max-width: 350px) {
+    width: 100%;
+  }
 `;
 
 const StyledHeader = styled.div`
