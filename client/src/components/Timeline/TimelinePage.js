@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 
 // animation stuff
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { pageAnimation } from "../../animation";
 
 // context
@@ -56,7 +56,6 @@ const Timeline = () => {
         <Line>{dots}</Line>
         <Table position="right">{rightTable}</Table>
       </StyledMain>
-
       <Modal />
     </StyledTimeline>
   );

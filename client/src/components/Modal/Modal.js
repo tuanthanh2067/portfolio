@@ -5,6 +5,10 @@ import Overlay from "./Overlay";
 
 import { PageContext } from "../../context/PageContext";
 
+// animation
+import { motion, AnimatePresence } from "framer-motion";
+import { modalAnimation } from "../../animation";
+
 const Modal = () => {
   const { modalInfo, setModalInfo } = useContext(PageContext);
 
@@ -13,7 +17,12 @@ const Modal = () => {
   };
 
   const modal = modalInfo && (
-    <>
+    <motion.div
+      key="modal"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <Overlay onSelected={closeHandler} />
       <StyledModal>
         <StyledHeader>
@@ -32,10 +41,10 @@ const Modal = () => {
           <p>{modalInfo.story}</p>
         </StyledBody>
       </StyledModal>
-    </>
+    </motion.div>
   );
 
-  return modal;
+  return <AnimatePresence>{modal}</AnimatePresence>;
 };
 
 const StyledModal = styled.div`
@@ -47,7 +56,7 @@ const StyledModal = styled.div`
   border-radius: 8px;
   border: 1px solid #d4d4d4;
   width: 350px;
-  min-height: 250px;
+  min-height: 100px;
   padding: 0.75em;
   z-index: 15;
 `;
@@ -64,12 +73,13 @@ const StyledHeader = styled.div`
     width: 11px;
     height: 11px;
     cursor: pointer;
+    fill: #7e7e7e;
   }
 `;
 
 const StyledBody = styled.div`
-  font-size: 0.9em;
-  padding: 0.5em 0em;
+  font-size: 0.8em;
+  padding: 1em 0em;
 `;
 
 export default Modal;
