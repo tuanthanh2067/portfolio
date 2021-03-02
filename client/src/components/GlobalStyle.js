@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
         background-position: center;
         background-attachment: fixed;
         background-size: cover;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'IBM Plex Mono', monospace;
         overflow: hidden;
     }
     #root, .App{
@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     button, input, textarea {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'IBM Plex Mono', monospace;
     }
 
 `;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 // shuttle
-import Shuttle from "../Shuttle";
+import Shuttle from "../Shuttle/Shuttle";
 
 const WebDevSkill = ({ skill, onSelected }) => {
   let shuttles = [];

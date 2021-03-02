@@ -7,7 +7,7 @@ import WebDevSkill from "./WebDevSkill";
 import { motion } from "framer-motion";
 
 // shuttle
-import Shuttle from "../Shuttle";
+import Shuttle from "../Shuttle/Shuttle";
 
 // data
 import skills from "./data";

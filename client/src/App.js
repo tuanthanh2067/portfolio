@@ -11,7 +11,7 @@ import ContactMePage from "./components/Contact/ContactMePage";
 import TimelinePage from "./components/Timeline/TimelinePage";
 
 // page selector
-import PageSelector from "./components/PageSelector";
+import PageSelector from "./components/PageSelector/PageSelector";
 
 // context
 import PageContextProvider from "./context/PageContext";

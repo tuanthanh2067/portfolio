@@ -18,6 +18,6 @@ const StyledDot = styled.div`
   cursor: pointer;
   transition: all 0.25s ease;
   &:hover {
-    background: #d4d4d4;
+    background: #2e2e2e;
   }
 `;

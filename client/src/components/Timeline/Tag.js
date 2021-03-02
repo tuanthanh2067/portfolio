@@ -13,10 +13,10 @@ export default Tag;
 
 const StyledTag = styled.div`
   position: absolute;
-  min-width: 140px;
-  height: 30px;
+  min-width: 145px;
+  height: 33px;
   display: flex;
-  font-size: 0.75em;
+  font-size: 0.8em;
   justify-content: center;
   align-items: center;
   padding: 0.5em;
@@ -26,7 +26,8 @@ const StyledTag = styled.div`
   cursor: pointer;
   border-radius: 12px;
   &:hover {
-    background: #d4d4d4;
+    background: #2e2e2e;
+    color: white;
   }
   @media (max-width: 450px) {
     min-width: 120px;

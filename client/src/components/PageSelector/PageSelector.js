@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 // context
-import { PageContext } from "../context/PageContext";
+import { PageContext } from "../../context/PageContext";
 
 const PageSelector = () => {
   const { currentPage, setCurrentPage, totalPage, setDirection } = useContext(
@@ -98,7 +98,7 @@ const StyledSvg = styled.svg`
 `;
 
 const StyledCurrentPage = styled.div`
-  cursor: pointer;
+  pointer-events: none;
 `;
 
 export default PageSelector;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 // shuttle
-import ShuttleImage from "../assets/icons/shuttle.png";
+import ShuttleImage from "../../assets/icons/shuttle.png";
 
 const Shuttle = ({ ...rest }) => {
   return (
