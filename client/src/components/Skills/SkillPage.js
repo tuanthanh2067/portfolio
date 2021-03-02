@@ -5,6 +5,8 @@ import styled from "styled-components";
 import { motion, AnimatePresence } from "framer-motion";
 import { pageAnimation } from "../../animation";
 
+import Table from "../Table/Table";
+
 // context
 import { PageContext } from "../../context/PageContext";
 
@@ -25,11 +27,11 @@ const SkillPage = () => {
       exit={exit}
     >
       <StyledTitle>My skills</StyledTitle>
-      <StyledTable>
+      <Table>
         <AnimatePresence>
           {clickedSkill ? <DetailedSkill /> : <GeneralSkills />}
         </AnimatePresence>
-      </StyledTable>
+      </Table>
     </StyledSkills>
   );
 };
@@ -43,35 +45,6 @@ const StyledTitle = styled.h1`
   color: white;
   text-align: center;
   padding-top: 0.5em;
-`;
-
-const StyledTable = styled.div`
-  width: 30%;
-  height: 80%;
-  background: #18191a;
-  margin: 2em auto;
-  border-radius: 36px;
-  padding: 1.5em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media (max-width: 1400px) {
-    width: 40%;
-  }
-
-  @media (max-width: 1100px) {
-    width: 55%;
-  }
-  @media (max-width: 800px) {
-    width: 75%;
-  }
-  @media (max-width: 600px) {
-    width: 85%;
-  }
-  @media (max-width: 500px) {
-    width: 90%;
-  }
 `;
 
 export default SkillPage;

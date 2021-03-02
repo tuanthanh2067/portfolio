@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import WebDevSkill from "./WebDevSkill";
+import SingleSkill from "./SingleSkill";
 
 // animation stuff
 import { motion } from "framer-motion";
@@ -30,7 +30,7 @@ const GeneralSkills = () => {
       <StyledBody>
         {skills.map((skill) => {
           return (
-            <WebDevSkill
+            <SingleSkill
               skill={skill}
               key={skill.title}
               onSelected={setClickedSkill}
