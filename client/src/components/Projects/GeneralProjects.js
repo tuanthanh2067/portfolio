@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
 import SingleProject from "./SingleProject";
@@ -6,14 +6,17 @@ import SingleProject from "./SingleProject";
 // data
 import projects from "./data";
 
+// context
+import { PageContext } from "../../context/PageContext";
+
 const GeneralProjects = () => {
-  console.log(projects);
+  const { setClickedProject } = useContext(PageContext);
   return (
     <StyledGeneralProjects>
       {projects.map((project) => (
         <SingleProject
-          img={project.img}
-          title={project.title}
+          project={project}
+          onSelected={setClickedProject}
           key={project.title}
         />
       ))}

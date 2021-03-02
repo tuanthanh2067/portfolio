@@ -1,8 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
-import Project from "./Project";
-
 // components
 import DetailedProject from "./DetailedProject";
 import GeneralProjects from "./GeneralProjects";
@@ -30,11 +28,15 @@ const ProjectPage = () => {
       exit={exit}
     >
       <StyledTitle>My projects</StyledTitle>
-      <Table>
-        <AnimatePresence>
-          {clickedProject ? <DetailedProject /> : <GeneralProjects />}
-        </AnimatePresence>
-      </Table>
+      <AnimatePresence>
+        {clickedProject ? (
+          <DetailedProject />
+        ) : (
+          <Table>
+            <GeneralProjects />
+          </Table>
+        )}
+      </AnimatePresence>
     </StyledProjects>
   );
 };

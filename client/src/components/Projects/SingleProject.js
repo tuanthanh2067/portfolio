@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const SingleProject = ({ img, title }) => {
+const SingleProject = ({ project, onSelected }) => {
   return (
-    <StyledProject>
+    <StyledProject onClick={() => onSelected(project)}>
       <StyledImg>
-        <img src={img} alt={title}></img>
+        <img src={project.img} alt={project.title}></img>
       </StyledImg>
-      <StyledTitle>{title}</StyledTitle>
+      <StyledTitle>{project.title}</StyledTitle>
       <StyledSvg>
         <svg
           xmlns="http://www.w3.org/2000/svg"

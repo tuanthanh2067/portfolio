@@ -1,12 +1,8 @@
 import styled from "styled-components";
 
-const Project = ({ title, image, url }) => {
-  const redirectHandler = () => {
-    window.location.href = url;
-  };
-
+const Project = ({ title, image, width, height }) => {
   return (
-    <StyledWindow onClick={redirectHandler}>
+    <StyledWindow style={{ width: width, height: height }}>
       <StyledHeader>
         <StyledButtons>
           <CloseButton></CloseButton>
@@ -23,8 +19,6 @@ const Project = ({ title, image, url }) => {
 };
 
 const StyledWindow = styled.div`
-  width: 45%;
-  height: 250px;
   background: white;
   display: flex;
   flex-direction: column;
@@ -32,8 +26,6 @@ const StyledWindow = styled.div`
   border-radius: 12px;
   overflow: hidden;
   background: black;
-  cursor: pointer;
-
   @media (max-width: 600px) {
     height: 220px;
   }
@@ -41,7 +33,7 @@ const StyledWindow = styled.div`
 
 const StyledHeader = styled.div`
   width: 100%;
-  height: 12.5%;
+  height: 35px;
   background: #c4c4c4;
   display: flex;
   padding: 0 1em;
@@ -91,7 +83,8 @@ const MinimizeButton = styled.div`
 
 const StyledTitle = styled.div`
   font-weight: 500;
-  font-size: 0.8em;
+  font-size: 0.85em;
+  font-style: italic;
   @media (max-width: 450px) {
     font-size: 0.7em;
   }
@@ -100,16 +93,11 @@ const StyledTitle = styled.div`
 const StyledBody = styled.div`
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
 
   img {
-    width: 100%;
-    height: 100%;
     transition: all 0.5s ease;
-    object-fit: cover;
-    &:hover {
-      transform: scale(1.125);
-    }
+    width: 100%;
   }
 `;
 

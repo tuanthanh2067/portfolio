@@ -22,6 +22,8 @@ const PageContextProvider = (props) => {
         setClickedSkill,
         modalInfo,
         setModalInfo,
+        clickedProject,
+        setClickedProject,
       }}
     >
       {props.children}
