@@ -27,11 +27,11 @@ function App() {
         <PageSelector />
         <AnimatePresence exitBeforeEnter>
           <Switch location={location} key={location.pathname}>
-            <Route path="/" exact render={() => <IntroPage />} />
             <Route path="/skills" render={() => <SkillPage />} />
             <Route path="/projects" render={() => <ProjectPage />} />
             <Route path="/timeline" render={() => <TimelinePage />} />
             <Route path="/contact" render={() => <ContactMePage />} />
+            <Route path="/" render={() => <IntroPage />} />
           </Switch>
         </AnimatePresence>
       </div>

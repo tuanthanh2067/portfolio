@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 import SplitText from "../SplitText";
 import { pageAnimation } from "../../animation";
 
+// border comp
+import Border from "../Border/Border";
+
 // context
 import { PageContext } from "../../context/PageContext";
 
@@ -22,6 +25,7 @@ const IntroPage = () => {
       animate="show"
       exit={exit}
     >
+      <Border position="10%" width="80%" thickness="3px" background="white" />
       <StyledName>
         Hi, My name is{" "}
         <SplitText
