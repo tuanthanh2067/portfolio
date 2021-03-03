@@ -1,16 +1,29 @@
 // images
 import imageLibrary from "../../assets/images/image-library.jpg";
+import fullImageLibrary from "../../assets/images/full-website-image-gallery.jpg";
 
 import gameLibrary from "../../assets/images/game-library.jpg";
 import fullGameLibrary from "../../assets/images/full-webpage-games-react.jpg";
 
 import vacation from "../../assets/images/airbnb-clone.jpg";
+import fullVacation from "../../assets/images/full-website-vacation.jpg";
 
 // icons
 import react from "../../assets/icons/react.png";
+import javascript from "../../assets/icons/javascript.png";
+import nodejs from "../../assets/icons/nodejs.png";
 
 const projects = [
-  { img: imageLibrary, title: "Image library" },
+  {
+    img: imageLibrary,
+    full: fullImageLibrary,
+    title: "Image library",
+    details:
+      "This project is about gallery created using Reactjs, styled-components, React Router, React Hooks. API is fetched from Pexels using Pexels Javascript Library. The website supports light and dark mode.",
+    technologies: [react],
+    website: "https://tuanthanh2067.github.io/gallery-react/",
+    source: "https://github.com/tuanthanh2067/gallery-react",
+  },
   {
     img: gameLibrary,
     full: fullGameLibrary,
@@ -21,7 +34,16 @@ const projects = [
     website: "https://tuanthanh2067.github.io/games-react",
     source: "https://github.com/tuanthanh2067/games-react",
   },
-  { img: vacation, title: "Vacation (Airbnb clone)" },
+  {
+    img: vacation,
+    title: "Vacation (Airbnb clone)",
+    full: fullVacation,
+    details:
+      "This project is airbnb clone. It provides user authentication, booking, upload rooms,... Nodejs and vanilla javascript were used to develop this website. User is able to update profile, change avatar. Host can add or remove pictures of their rooms.",
+    technologies: [nodejs, javascript],
+    website: "https://enigmatic-woodland-93685.herokuapp.com/",
+    source: "",
+  },
 ];
 
 export default projects;

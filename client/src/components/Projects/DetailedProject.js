@@ -133,6 +133,11 @@ const StyledRight = styled.div`
   div {
     margin-bottom: 2em;
   }
+  img {
+    width: 32px;
+    height: 32px;
+    margin-right: 0.45em;
+  }
 `;
 
 const StyledRedirect = styled.div`
@@ -145,8 +150,8 @@ const StyledRedirect = styled.div`
 
   svg {
     fill: white;
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
   }
 `;
 
