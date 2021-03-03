@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 
+import { motion } from "framer-motion";
+
 import { PageContext } from "../../context/PageContext";
 
 import Window from "../Window/Window";
@@ -9,7 +11,11 @@ const DetailedProject = () => {
   const { clickedProject, setClickedProject } = useContext(PageContext);
 
   return (
-    <StyledDetailedProject>
+    <StyledDetailedProject
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <StyledLeft>
         <Window
           title={clickedProject.title}
@@ -29,7 +35,7 @@ const DetailedProject = () => {
           <h2>Technologies used:</h2>
           <div>
             {clickedProject.technologies.map((tech) => (
-              <img src={tech} alt="tech"></img>
+              <img src={tech} alt="tech" key={tech}></img>
             ))}
           </div>
         </div>
@@ -96,7 +102,7 @@ const DetailedProject = () => {
   );
 };
 
-const StyledDetailedProject = styled.div`
+const StyledDetailedProject = styled(motion.div)`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -106,6 +112,10 @@ const StyledDetailedProject = styled.div`
   background: #18191a;
   display: flex;
   border-radius: 20px;
+
+  @media screen and (max-width: 1000px) {
+    width: 90%;
+  }
 `;
 
 const StyledLine = styled.div`
@@ -113,6 +123,9 @@ const StyledLine = styled.div`
   background: #2f3133;
   height: 80%;
   margin: auto;
+  @media screen and (max-width: 875px) {
+    display: none;
+  }
 `;
 
 const StyledLeft = styled.div`
@@ -120,12 +133,18 @@ const StyledLeft = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 875px) {
+    display: none;
+  }
 `;
 const StyledRight = styled.div`
   flex: 10;
   color: white;
   width: 100%;
-  padding: 2em;
+  margin: 3em 0.25em 3.5em 2em;
+  padding-right: 0.5em;
+  overflow: auto;
   h1 {
     text-align: center;
     margin-bottom: 1em;

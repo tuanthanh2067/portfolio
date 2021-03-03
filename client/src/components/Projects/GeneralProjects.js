@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 import SingleProject from "./SingleProject";
 
@@ -12,7 +13,11 @@ import { PageContext } from "../../context/PageContext";
 const GeneralProjects = () => {
   const { setClickedProject } = useContext(PageContext);
   return (
-    <StyledGeneralProjects>
+    <StyledGeneralProjects
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       {projects.map((project) => (
         <SingleProject
           project={project}
@@ -24,7 +29,7 @@ const GeneralProjects = () => {
   );
 };
 
-const StyledGeneralProjects = styled.div`
+const StyledGeneralProjects = styled(motion.div)`
   display: flex;
   flex-direction: column;
 `;
