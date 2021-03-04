@@ -66,8 +66,12 @@ const StyledName = styled(motion.h1)`
     color: white;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 520px) {
     font-size: 1.45em;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 1.3em;
   }
 `;
 

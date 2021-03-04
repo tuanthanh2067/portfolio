@@ -29,9 +29,9 @@ const StyledProject = styled.div`
   align-items: center;
   cursor: pointer;
   width: 100%;
-  padding-bottom: 1.5em;
   border-bottom: 1px solid #2f3133;
-  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  padding-bottom: 1.5em;
 `;
 
 const StyledImg = styled.div`
@@ -42,6 +42,10 @@ const StyledImg = styled.div`
   img {
     width: 100%;
     height: 100%;
+  }
+
+  @media (max-width: 400px) {
+    display: none;
   }
 `;
 

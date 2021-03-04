@@ -69,10 +69,14 @@ const StyledContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 350px;
   height: 100%;
+  width: 350px;
   & > div {
     margin: 2em;
+  }
+
+  @media (max-width: 350px) {
+    width: 100%;
   }
 `;
 

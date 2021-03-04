@@ -17,6 +17,7 @@ const StyledTable = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
 
   @media (max-width: 1400px) {
     width: 40%;

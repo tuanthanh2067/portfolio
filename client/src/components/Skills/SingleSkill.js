@@ -21,15 +21,29 @@ const WebDevSkill = ({ skill, onSelected }) => {
 export default WebDevSkill;
 
 const StyledSkill = styled.div`
-  height: 8%;
   color: white;
   font-weight: bold;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid #2f3133;
   cursor: pointer;
-  margin: 1.25em 0em;
+  margin-top: 1.35em;
+  padding-bottom: 1.35em;
   h2 {
     font-size: 1.125em;
+    margin-right: 0.45em;
+  }
+
+  div {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 500px) {
+    h2 {
+      font-size: 1.05em;
+    }
   }
 `;

@@ -66,7 +66,7 @@ const MessageBox = () => {
 };
 
 const StyledBox = styled.div`
-  width: 350px;
+  width: 100%;
   height: 400px;
   display: flex;
   flex-direction: column;

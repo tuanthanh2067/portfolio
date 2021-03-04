@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Border = ({ position, width, thickness, background }) => {
   return (
-    <>
+    <StyledBorder>
       <StyledTop
         style={{
           top: position,
@@ -36,9 +36,15 @@ const Border = ({ position, width, thickness, background }) => {
           background: background,
         }}
       ></StyledLeft>
-    </>
+    </StyledBorder>
   );
 };
+
+const StyledBorder = styled.div`
+  @media screen and (max-width: 350px) {
+    display: none;
+  }
+`;
 
 const StyledTop = styled.div`
   position: absolute;

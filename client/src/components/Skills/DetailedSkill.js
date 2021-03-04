@@ -17,9 +17,7 @@ const DetailedSkills = () => {
     >
       <StyledHeader>{clickedSkill.title}</StyledHeader>
       <StyledBody>
-        <StyledContent>
-          Hello {clickedSkill.title} and {clickedSkill.description}
-        </StyledContent>
+        <StyledContent>{clickedSkill.description}</StyledContent>
       </StyledBody>
       <StyledDoneButton onClick={() => setClickedSkill(null)}>
         Done

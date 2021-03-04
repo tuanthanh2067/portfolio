@@ -21,7 +21,12 @@ const Shuttle = ({ ...rest }) => {
 const StyledShuttle = styled(motion.img)`
   width: 22px;
   height: 22px;
-  margin: 0em 0.25em;
+  margin: 0.25em 0.25em;
+
+  @media (max-width: 500px) {
+    width: 18px;
+    height: 18px;
+  }
 `;
 
 export default Shuttle;
