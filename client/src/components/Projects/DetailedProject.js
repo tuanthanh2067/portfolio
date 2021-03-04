@@ -34,8 +34,8 @@ const DetailedProject = () => {
         <div>
           <h2>Technologies used:</h2>
           <div>
-            {clickedProject.technologies.map((tech) => (
-              <img src={tech} alt="tech" key={tech}></img>
+            {clickedProject.technologies.map((tech, index) => (
+              <img src={tech} alt="tech" key={index}></img>
             ))}
           </div>
         </div>
