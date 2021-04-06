@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
+import PROD_API from "../../api";
+
 const MessageBox = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -21,7 +23,7 @@ const MessageBox = () => {
   const submitHandler = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("/api/message", {
+    const response = await fetch(`${PROD_API}/message`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
