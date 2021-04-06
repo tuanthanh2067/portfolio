@@ -3,11 +3,11 @@ import styled from "styled-components";
 
 // animation stuff
 import { motion } from "framer-motion";
-import SplitText from "../SplitText";
 import { pageAnimation } from "../../animation";
 
-// border comp
-import Border from "../Border/Border";
+// component
+import Terminal from "../Window/Terminal";
+import Text from "./Text";
 
 // context
 import { PageContext } from "../../context/PageContext";
@@ -18,6 +18,18 @@ const IntroPage = () => {
   const initial = direction === "up" ? "hiddenUp" : "hiddenDown";
   const exit = direction === "up" ? "exitDown" : "exitUp";
 
+  const date = new Date();
+
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 1.5,
+      },
+    },
+  };
+
   return (
     <StyledText
       variants={pageAnimation}
@@ -25,26 +37,45 @@ const IntroPage = () => {
       animate="show"
       exit={exit}
     >
-      <Border position="10%" width="80%" thickness="3px" background="white" />
-      <StyledName>
-        Hi, My name is{" "}
-        <SplitText
-          styled={{ color: "#23d997", display: "inline-block" }}
-          initial={{ opacity: 0 }}
-          animate="visible"
-          variants={{
-            visible: (i) => ({
-              opacity: 1,
-              transition: {
-                delay: i * 0.75,
-              },
-            }),
-          }}
-        >
-          Thanh
-        </SplitText>
-      </StyledName>
-      <StyledIntro>I'm a web developer</StyledIntro>
+      <Terminal title="thanh@tuanthanh2067: ~">
+        <TerminalText>
+          <h5>Current login: {date.toUTCString()}</h5>
+          <motion.div variants={container} initial="hidden" animate="show">
+            <Text path="C:\Users\tuanthanh2067>" text="Hello person" />
+            <Text
+              path="C:\Users\tuanthanh2067>"
+              text="My name is Tuan Thanh Tan"
+            />
+            <Text path="C:\Users\tuanthanh2067>" text="I'm a web developer" />
+            <Text
+              path="C:\Users\tuanthanh2067>"
+              text="I'm studying at Seneca College"
+            />
+            <Text
+              path="C:\Users\tuanthanh2067>"
+              text="I've always loved computer since I was a child"
+            />
+            <Text
+              path="C:\Users\tuanthanh2067>"
+              text="Imagine creating loads of amazing websites that people enjoy using"
+            />
+            <Text
+              path="C:\Users\tuanthanh2067>"
+              text="I'm currently working on a live-streaming app and live chat app"
+            />
+            <Text
+              path="C:\Users\tuanthanh2067>"
+              text="Hope I can get it done before I graduate LOL"
+            />
+            <Text
+              path="C:\Users\tuanthanh2067>"
+              text="Move to next pages to explore more!"
+            />
+            <Text path="C:\Users\tuanthanh2067>" text="Thank youuu!" />
+            <Text path="C:\Users\tuanthanh2067>" text="_" />
+          </motion.div>
+        </TerminalText>
+      </Terminal>
     </StyledText>
   );
 };
@@ -58,29 +89,10 @@ const StyledText = styled(motion.div)`
   flex-direction: column;
 `;
 
-const StyledName = styled(motion.h1)`
-  color: white;
-  overflow: hidden;
-
-  div:hover {
-    color: white;
-  }
-
-  @media (max-width: 520px) {
-    font-size: 1.45em;
-  }
-
-  @media (max-width: 450px) {
-    font-size: 1.3em;
-  }
-`;
-
-const StyledIntro = styled(motion.h1)`
-  font-size: 1.25em;
-  overflow: hidden;
-  color: white;
-  @media (max-width: 450px) {
-    font-size: 1.005em;
+const TerminalText = styled(motion.div)`
+  padding: 0.25em 0.75em;
+  div {
+    margin: 0.75em 0em;
   }
 `;
 
