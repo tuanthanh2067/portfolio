@@ -91,7 +91,8 @@ const StyledText = styled(motion.div)`
 
 const TerminalText = styled(motion.div)`
   padding: 0.25em 0.75em;
-  div {
+  div,
+  h5 {
     margin: 0.75em 0em;
   }
 `;
