@@ -25,7 +25,8 @@ const GeneralSkills = () => {
       exit={{ opacity: 0 }}
     >
       <StyledHeader>
-        <Shuttle />= 3 months
+        <Shuttle />
+        {"<"}= 3 months
       </StyledHeader>
       <StyledBody>
         {skills.map((skill) => {

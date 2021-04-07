@@ -8,12 +8,26 @@ import fullGameLibrary from "../../assets/images/full-webpage-games-react.jpg";
 import vacation from "../../assets/images/airbnb-clone.jpg";
 import fullVacation from "../../assets/images/full-website-vacation.jpg";
 
+import senecaMusic from "../../assets/images/seneca-music.jpg";
+import fullSenecaMusic from "../../assets/images/full-seneca-music.png";
+
 // icons
 import react from "../../assets/icons/react.png";
 import javascript from "../../assets/icons/javascript.png";
 import nodejs from "../../assets/icons/nodejs.png";
+import angular from "../../assets/icons/angular.png";
 
 const projects = [
+  {
+    img: senecaMusic,
+    full: fullSenecaMusic,
+    title: "Seneca Music",
+    details:
+      "This project is created using Angular for frontend, Nodejs for backend, and MongoDb for database. API is fetched from Spotify API",
+    technologies: [angular, nodejs],
+    website: "https://web422-assignment04.vercel.app/newRelease",
+    source: "https://github.com/tuanthanh2067/web422-assignment04",
+  },
   {
     img: imageLibrary,
     full: fullImageLibrary,

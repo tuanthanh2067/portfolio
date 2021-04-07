@@ -41,6 +41,11 @@ const skills = [
       "Nodejs is really powerful and easy to learn. I can get familiar with it in just a couple of weeks. It has a HUGE community which answers every question I have, so I guess it's not going to die soon. ",
   },
   {
+    title: "Linux",
+    amount: 1,
+    description: "",
+  },
+  {
     title: "Figma",
     amount: 1,
     description:
