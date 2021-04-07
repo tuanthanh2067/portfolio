@@ -18,6 +18,22 @@ const IntroPage = () => {
   const initial = direction === "up" ? "hiddenUp" : "hiddenDown";
   const exit = direction === "up" ? "exitDown" : "exitUp";
 
+  const container = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        delay: 2.25,
+        staggerChildren: 1.75,
+      },
+    },
+  };
+
+  const item = {
+    hidden: { opacity: 0 },
+    show: { opacity: 1 },
+  };
+
   return (
     <StyledText
       variants={pageAnimation}
@@ -27,7 +43,7 @@ const IntroPage = () => {
     >
       <Border position="10%" width="80%" thickness="3px" background="white" />
       <StyledName>
-        Hi, My name is{" "}
+        Hello, My name is{" "}
         <SplitText
           styled={{ color: "#23d997", display: "inline-block" }}
           initial={{ opacity: 0 }}
@@ -36,15 +52,40 @@ const IntroPage = () => {
             visible: (i) => ({
               opacity: 1,
               transition: {
-                delay: i * 0.75,
+                delay: i * 0.15,
               },
             }),
           }}
         >
-          Thanh
+          Tuan Thanh Tan
         </SplitText>
       </StyledName>
-      <StyledIntro>I'm a web developer</StyledIntro>
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        style={{ textAlign: "center" }}
+      >
+        <StyledIntro variants={item}>
+          I'm studying at Seneca College
+        </StyledIntro>
+        <StyledIntro variants={item}>
+          I've always loved computer since I was a child
+        </StyledIntro>
+        <StyledIntro variants={item}>
+          Imagine creating loads of amazing websites that people enjoy using
+        </StyledIntro>
+        <StyledIntro variants={item}>
+          I'm currently working on a live-streaming app and live chat app
+        </StyledIntro>
+        <StyledIntro variants={item}>
+          Hope I can get it done before I graduate LOL
+        </StyledIntro>
+        <StyledIntro variants={item}>
+          Move to next pages to explore more!
+        </StyledIntro>
+        <StyledIntro variants={item}>Thank youuu!</StyledIntro>
+      </motion.div>
     </StyledText>
   );
 };
@@ -61,6 +102,7 @@ const StyledText = styled(motion.div)`
 const StyledName = styled(motion.h1)`
   color: white;
   overflow: hidden;
+  text-align: center;
 
   div:hover {
     color: white;
@@ -75,12 +117,20 @@ const StyledName = styled(motion.h1)`
   }
 `;
 
-const StyledIntro = styled(motion.h1)`
-  font-size: 1.25em;
+const StyledIntro = styled(motion.div)`
+  font-size: 1.1em;
+  margin: 0.5em 0em;
   overflow: hidden;
   color: white;
+  @media (max-width: 1000px) {
+    font-size: 0.9em;
+  }
+  @media (max-width: 520px) {
+    font-size: 0.85em;
+  }
   @media (max-width: 450px) {
-    font-size: 1.005em;
+    font-size: 0.8em;
+    margin: 1em 0em;
   }
 `;
 

@@ -41,7 +41,7 @@ const Border = ({ position, width, thickness, background }) => {
 };
 
 const StyledBorder = styled.div`
-  @media screen and (max-width: 350px) {
+  @media screen and (max-width: 875px) {
     display: none;
   }
 `;
