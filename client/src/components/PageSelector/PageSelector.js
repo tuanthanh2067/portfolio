@@ -5,23 +5,9 @@ import { useHistory } from "react-router-dom";
 import { PageContext } from "../../context/PageContext";
 
 const PageSelector = () => {
-  const { currentPage, setCurrentPage, totalPage, setDirection } = useContext(
-    PageContext
-  );
+  const { currentPage, goUpHandler, goDownHandler } = useContext(PageContext);
 
   const history = useHistory();
-
-  const goDownHandler = () => {
-    if (currentPage + 1 > totalPage) return;
-    setCurrentPage(currentPage + 1);
-    setDirection("down");
-  };
-
-  const goUpHandler = () => {
-    if (currentPage - 1 < 1) return;
-    setCurrentPage(currentPage - 1);
-    setDirection("up");
-  };
 
   useEffect(() => {
     if (currentPage === 1) {

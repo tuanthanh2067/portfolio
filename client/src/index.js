@@ -5,10 +5,14 @@ import reportWebVitals from "./reportWebVitals";
 
 import { BrowserRouter } from "react-router-dom";
 
+import PageContextProvider from "./context/PageContext";
+
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <App />
+      <PageContextProvider>
+        <App />
+      </PageContextProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

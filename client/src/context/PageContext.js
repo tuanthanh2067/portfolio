@@ -10,6 +10,18 @@ const PageContextProvider = (props) => {
   const [modalInfo, setModalInfo] = useState(null);
   const [clickedProject, setClickedProject] = useState(null);
 
+  const goDownHandler = () => {
+    if (currentPage + 1 > totalPage) return;
+    setCurrentPage(currentPage + 1);
+    setDirection("down");
+  };
+
+  const goUpHandler = () => {
+    if (currentPage - 1 < 1) return;
+    setCurrentPage(currentPage - 1);
+    setDirection("up");
+  };
+
   return (
     <PageContext.Provider
       value={{
@@ -24,6 +36,8 @@ const PageContextProvider = (props) => {
         setModalInfo,
         clickedProject,
         setClickedProject,
+        goUpHandler,
+        goDownHandler,
       }}
     >
       {props.children}

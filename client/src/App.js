@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
 
 import GlobalStyle from "./components/GlobalStyle";
@@ -14,28 +14,36 @@ import TimelinePage from "./components/Timeline/TimelinePage";
 import PageSelector from "./components/PageSelector/PageSelector";
 
 // context
-import PageContextProvider from "./context/PageContext";
+import { PageContext } from "./context/PageContext";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
   const location = useLocation();
 
+  const { goUpHandler, goDownHandler } = useContext(PageContext);
+
+  const handleWheel = (e) => {
+    if (e.deltaY < 0) {
+      goUpHandler();
+    } else if (e.deltaY > 0) {
+      goDownHandler();
+    }
+  };
+
   return (
-    <PageContextProvider>
-      <div className="App">
-        <GlobalStyle />
-        <PageSelector />
-        <AnimatePresence exitBeforeEnter>
-          <Switch location={location} key={location.pathname}>
-            <Route path="/skills" render={() => <SkillPage />} />
-            <Route path="/projects" render={() => <ProjectPage />} />
-            <Route path="/timeline" render={() => <TimelinePage />} />
-            <Route path="/contact" render={() => <ContactMePage />} />
-            <Route path="/" render={() => <IntroPage />} />
-          </Switch>
-        </AnimatePresence>
-      </div>
-    </PageContextProvider>
+    <div className="App" onWheel={handleWheel}>
+      <GlobalStyle />
+      <PageSelector />
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
+          <Route path="/skills" render={() => <SkillPage />} />
+          <Route path="/projects" render={() => <ProjectPage />} />
+          <Route path="/timeline" render={() => <TimelinePage />} />
+          <Route path="/contact" render={() => <ContactMePage />} />
+          <Route path="/" render={() => <IntroPage />} />
+        </Switch>
+      </AnimatePresence>
+    </div>
   );
 }
 
