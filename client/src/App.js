@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Route, Switch, useLocation } from "react-router-dom";
+import styled from "styled-components";
 
 import GlobalStyle from "./components/GlobalStyle";
 
@@ -21,7 +22,8 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   const location = useLocation();
 
-  const { goUpHandler, goDownHandler, appElement } = useContext(PageContext);
+  const { goUpHandler, goDownHandler, appElement, sideNavigator } =
+    useContext(PageContext);
 
   const handleWheel = (e) => {
     if (e.deltaY < 0) {
@@ -32,11 +34,11 @@ function App() {
   };
 
   return (
-    <div
+    <StyledApp
       className="App"
       onWheel={handleWheel}
       ref={appElement}
-      style={{ marginLeft: "70px" }}
+      isNavigator={sideNavigator}
     >
       <GlobalStyle />
       <PageSelector />
@@ -50,8 +52,13 @@ function App() {
           <Route path="/" render={() => <IntroPage />} />
         </Switch>
       </AnimatePresence>
-    </div>
+    </StyledApp>
   );
 }
+
+const StyledApp = styled.div`
+  transition: all 0.5s ease;
+  margin-left: ${(props) => (props.isNavigator ? "70px" : "0px")};
+`;
 
 export default App;

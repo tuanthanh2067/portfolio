@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useContext } from "react";
 
 import IconSelector from "../PageSelector/IconSelector";
@@ -10,22 +10,20 @@ export default function PageChange() {
   const { sideNavigator, setSideNavigator } = useContext(PageContext);
 
   const navigatorHandler = () => {
-    setSideNavigator(false);
+    setSideNavigator((prev) => !prev);
   };
 
   return (
-    sideNavigator && (
-      <StyledPageChange>
-        <StyledLeft>
-          <IconSelector />
-          <StyledHandler>
-            <button onClick={navigatorHandler}>
-              <FaArrowLeft />
-            </button>
-          </StyledHandler>
-        </StyledLeft>
-      </StyledPageChange>
-    )
+    <StyledPageChange active={sideNavigator}>
+      <StyledLeft>
+        <IconSelector />
+        <StyledHandler>
+          <button onClick={navigatorHandler}>
+            {sideNavigator ? <FaArrowLeft /> : <FaArrowRight />}
+          </button>
+        </StyledHandler>
+      </StyledLeft>
+    </StyledPageChange>
   );
 }
 
@@ -36,7 +34,9 @@ const StyledPageChange = styled.div`
   width: 70px;
   height: 90%;
   background: rgb(25, 25, 25);
-  transform: translateY(5%);
+  transform: ${(props) =>
+    props.active ? "translate(0px, 5%)" : "translate(-70px, 5%)"};
+  transition: all 0.5s ease;
 
   border-top: 1px solid rgb(40, 40, 40);
   border-bottom: 1px solid rgb(40, 40, 40);
