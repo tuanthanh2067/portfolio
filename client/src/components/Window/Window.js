@@ -1,6 +1,12 @@
+import { useContext } from "react";
+
 import styled from "styled-components";
 
+import { PageContext } from "../../context/PageContext";
+
 const Project = ({ title, image, width, height }) => {
+  const { appElement } = useContext(PageContext);
+
   return (
     <StyledWindow style={{ width: width, height: height }}>
       <StyledHeader>
@@ -12,7 +18,13 @@ const Project = ({ title, image, width, height }) => {
         <StyledTitle>{title}</StyledTitle>
       </StyledHeader>
       <StyledBody>
-        <img src={image} alt={title}></img>
+        <img
+          src={image}
+          alt={title}
+          onMouseOver={() => {
+            console.log(appElement.current);
+          }}
+        ></img>
       </StyledBody>
     </StyledWindow>
   );

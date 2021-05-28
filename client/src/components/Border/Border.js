@@ -1,73 +1,48 @@
-import React from "react";
 import styled from "styled-components";
 
-const Border = ({ position, width, thickness, background }) => {
+export default function Border() {
   return (
-    <StyledBorder>
-      <StyledTop
-        style={{
-          top: position,
-          width: width,
-          height: thickness,
-          background: background,
-        }}
-      ></StyledTop>
-      <StyledRight
-        style={{
-          right: position,
-          height: width,
-          width: thickness,
-          background: background,
-        }}
-      ></StyledRight>
-      <StyledBottom
-        style={{
-          bottom: position,
-          width: width,
-          height: thickness,
-          background: background,
-        }}
-      ></StyledBottom>
-      <StyledLeft
-        style={{
-          left: position,
-          height: width,
-          width: thickness,
-          background: background,
-        }}
-      ></StyledLeft>
-    </StyledBorder>
+    <div>
+      <StyledTop></StyledTop>
+      <StyledLeft></StyledLeft>
+      <StyledBottom></StyledBottom>
+      <StyledRight></StyledRight>
+    </div>
   );
-};
-
-const StyledBorder = styled.div`
-  @media screen and (max-width: 875px) {
-    display: none;
-  }
-`;
+}
 
 const StyledTop = styled.div`
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-`;
-
-const StyledRight = styled.div`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-`;
-
-const StyledBottom = styled.div`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background: white;
 `;
 
 const StyledLeft = styled.div`
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 100%;
+  background: white;
 `;
 
-export default Border;
+const StyledBottom = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 100%;
+  background: white;
+`;
+
+const StyledRight = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 100%;
+  background: white;
+`;

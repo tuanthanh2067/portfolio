@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useRef } from "react";
 
 export const PageContext = createContext();
 
@@ -9,6 +9,7 @@ const PageContextProvider = (props) => {
   const [clickedSkill, setClickedSkill] = useState(null);
   const [modalInfo, setModalInfo] = useState(null);
   const [clickedProject, setClickedProject] = useState(null);
+  const appElement = useRef(null);
 
   const goDownHandler = () => {
     if (currentPage + 1 > totalPage) return;
@@ -38,6 +39,7 @@ const PageContextProvider = (props) => {
         setClickedProject,
         goUpHandler,
         goDownHandler,
+        appElement,
       }}
     >
       {props.children}

@@ -13,6 +13,8 @@ import TimelinePage from "./components/Timeline/TimelinePage";
 // page selector
 import PageSelector from "./components/PageSelector/PageSelector";
 
+import Border from "./components/Border/Border";
+
 // context
 import { PageContext } from "./context/PageContext";
 import { AnimatePresence } from "framer-motion";
@@ -20,7 +22,7 @@ import { AnimatePresence } from "framer-motion";
 function App() {
   const location = useLocation();
 
-  const { goUpHandler, goDownHandler } = useContext(PageContext);
+  const { goUpHandler, goDownHandler, appElement } = useContext(PageContext);
 
   const handleWheel = (e) => {
     if (e.deltaY < 0) {
@@ -31,9 +33,15 @@ function App() {
   };
 
   return (
-    <div className="App" onWheel={handleWheel}>
+    <div
+      className="App"
+      onWheel={handleWheel}
+      ref={appElement}
+      style={{ padding: "40px" }}
+    >
       <GlobalStyle />
       <PageSelector />
+      <Border />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route path="/skills" render={() => <SkillPage />} />
