@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export default function NavBar({ className }) {
+export default function NavBar() {
   return (
-    <StyledNavBar className={className}>
+    <StyledNavBar>
       <ul>
         <li>
           <Link to="/">Introduction</Link>

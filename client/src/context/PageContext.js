@@ -9,6 +9,7 @@ const PageContextProvider = (props) => {
   const [clickedSkill, setClickedSkill] = useState(null);
   const [modalInfo, setModalInfo] = useState(null);
   const [clickedProject, setClickedProject] = useState(null);
+  const [sideNavigator, setSideNavigator] = useState(true);
   const appElement = useRef(null);
 
   const goDownHandler = () => {
@@ -40,6 +41,8 @@ const PageContextProvider = (props) => {
         goUpHandler,
         goDownHandler,
         appElement,
+        sideNavigator,
+        setSideNavigator,
       }}
     >
       {props.children}

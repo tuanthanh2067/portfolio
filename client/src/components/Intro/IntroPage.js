@@ -70,6 +70,12 @@ const StyledIntro = styled.div`
 
 const StyledRight = styled.div`
   width: 40%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 `;
 
 export default IntroPage;
