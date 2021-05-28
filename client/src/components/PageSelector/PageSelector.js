@@ -1,11 +1,10 @@
-import React, { useContext, useEffect } from "react";
-import styled from "styled-components";
+import { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 // context
 import { PageContext } from "../../context/PageContext";
 
 const PageSelector = () => {
-  const { currentPage, goUpHandler, goDownHandler } = useContext(PageContext);
+  const { currentPage } = useContext(PageContext);
 
   const history = useHistory();
 
@@ -23,68 +22,7 @@ const PageSelector = () => {
     }
   }, [history, currentPage]);
 
-  return (
-    <StyledPageSelector>
-      {
-        <StyledSvg
-          onClick={() => goUpHandler()}
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z" />
-        </StyledSvg>
-      }
-
-      <StyledCurrentPage>{currentPage}</StyledCurrentPage>
-      {
-        <StyledSvg
-          onClick={() => goDownHandler()}
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-        >
-          <path d="M0 7.33l2.829-2.83 9.175 9.339 9.167-9.339 2.829 2.83-11.996 12.17z" />
-        </StyledSvg>
-      }
-    </StyledPageSelector>
-  );
+  return null;
 };
-
-const StyledPageSelector = styled.div`
-  position: absolute;
-  width: 14px;
-  display: flex;
-  flex-direction: column;
-  color: white;
-  align-items: center;
-  justify-content: center;
-  top: 50%;
-  right: 1%;
-  transform: translateY(-50%);
-  @media (max-width: 875px) {
-    top: 95%;
-    right: 50%;
-    transform: translateY(0%);
-    transform: translateX(50%);
-    width: 100px;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-`;
-
-const StyledSvg = styled.svg`
-  fill: white;
-  cursor: pointer;
-  width: 14px;
-  height: 14px;
-  margin: 1em 0em;
-`;
-
-const StyledCurrentPage = styled.div`
-  pointer-events: none;
-`;
 
 export default PageSelector;

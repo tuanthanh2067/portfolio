@@ -10,10 +10,7 @@ import ProjectPage from "./components/Projects/ProjectPage";
 import ContactMePage from "./components/Contact/ContactMePage";
 import TimelinePage from "./components/Timeline/TimelinePage";
 
-// page selector
-import PageSelector from "./components/PageSelector/PageSelector";
-
-import Border from "./components/Border/Border";
+import PageChange from "./components/PageChange/PageChange";
 
 // context
 import { PageContext } from "./context/PageContext";
@@ -37,11 +34,10 @@ function App() {
       className="App"
       onWheel={handleWheel}
       ref={appElement}
-      style={{ padding: "40px" }}
+      style={{ marginLeft: "60px" }}
     >
       <GlobalStyle />
-      <PageSelector />
-      <Border />
+      <PageChange />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.pathname}>
           <Route path="/skills" render={() => <SkillPage />} />
